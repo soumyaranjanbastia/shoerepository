@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './orders/orders.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OrdersComponent } from './orders/orders.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

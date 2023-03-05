@@ -6,9 +6,9 @@
       </i>&nbsp;
       <Strong>E-SHOPING</Strong>
       <div class=" from-group">
-        <input type="text" class="form-control" placeholder="search product">
+        <input type="text" class="form-control" placeholder="search product" [(ngModel)]="searchItem">
       </div>
-      <span class="fas fa-search search-icon"></span>
+      <span class="fas fa-search search-icon" (click)="fruitsItems"></span>
     </div>
 
     <div class="shoping">
@@ -28,29 +28,25 @@
 
 <section class="jt-carousel">
   <div class="container-fluid">
-    <div id="carouselExampleControls" class="carousel slide"
-      data-bs-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../assets/immages/images1.png" height="300rem"
-            class="d-block w-100" alt="#carouselExampleControls">
+          <img src="../assets/immages/images1.png" height="300rem" class="d-block w-100" alt="#carouselExampleControls">
         </div>
         <div class="carousel-item">
-          <img src="../assets/immages/images2.png" height="300rem"
-            class="d-block w-100" alt="#carouselExampleControls">
+          <img src="../assets/immages/images2.png" height="300rem" class="d-block w-100" alt="#carouselExampleControls">
         </div>
         <div class="carousel-item">
-          <img src="../assets/immages/images3.png" height="300rem"
-            class="d-block w-100" alt="#carouselExampleControls">
+          <img src="../assets/immages/images3.png" height="300rem" class="d-block w-100" alt="#carouselExampleControls">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button"
-        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button"
-        data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -61,17 +57,17 @@
 <section class="jt-card mt-3">
   <div class="container">
     <div class="row">
-      <div class="col-sm-3 jt-card mt-3 " *ngFor="let product of allProduct">
+      <div class="col-sm-3 jt-card mt-3 " *ngFor="let product of fruitsItems()">
         <div class="card">
           <div class="card-body">
-            <img [src]="product.imgUrl">
+            <img [src]="product.imgUrl" alt="img">
             <h5 class="card-title">{{ product.name }}</h5>
             <h5 class="card-price">Price = <span #price_ptag>{{ product.price }}</span></h5>
             <p class="card-text">{{ product.description }}</p>
             <div class="button-row">
               <div>
                 <a href="#" class="btn btn-success" (click)="purchaseSuccess()">Buy now</a>
-                
+
               </div>
               <div>
                 <button (click)="counterClien('+',
@@ -87,5 +83,3 @@
     </div>
   </div>
 </section>
-
-

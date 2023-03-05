@@ -8,10 +8,11 @@ import Swal from 'sweetalert2';
 })
 export class HomeComponent {
   counter = 1;
+  searchItem = "";
   allProduct = [
     {
       name: 'Apple',
-      price:100,
+      price: 100,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 1,
@@ -19,7 +20,7 @@ export class HomeComponent {
     },
     {
       name: 'Grapes',
-      price:120,
+      price: 120,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 2,
@@ -27,7 +28,7 @@ export class HomeComponent {
     },
     {
       name: 'Banana',
-      price:30,
+      price: 30,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 3,
@@ -35,7 +36,7 @@ export class HomeComponent {
     },
     {
       name: 'Guava',
-      price:80,
+      price: 80,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -43,31 +44,31 @@ export class HomeComponent {
     },
     {
       name: 'Strawberry',
-      price:200,
+      price: 200,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
       imgUrl: '../assets/immages/sreawberry.png'
     },
-     {
+    {
       name: 'Mango',
-      price:130,
+      price: 130,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
       imgUrl: '../assets/immages/mango.png'
-    }, 
+    },
     {
       name: 'Kiwi',
-      price:70,
+      price: 70,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
       imgUrl: '../assets/immages/kiwi.png'
     },
-     {
+    {
       name: 'Watermelon',
-      price:30,
+      price: 30,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -75,7 +76,7 @@ export class HomeComponent {
     },
     {
       name: 'Lemon',
-      price:80,
+      price: 80,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -83,7 +84,7 @@ export class HomeComponent {
     },
     {
       name: 'Orange',
-      price:100,
+      price: 100,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -91,7 +92,7 @@ export class HomeComponent {
     },
     {
       name: 'Papaya',
-      price:50,
+      price: 50,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -99,7 +100,7 @@ export class HomeComponent {
     },
     {
       name: 'Dragon',
-      price:110,
+      price: 110,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -107,7 +108,7 @@ export class HomeComponent {
     },
     {
       name: 'Custard-Apple',
-      price:80,
+      price: 80,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -115,7 +116,7 @@ export class HomeComponent {
     },
     {
       name: 'Pomegranate',
-      price:150,
+      price: 150,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -123,7 +124,7 @@ export class HomeComponent {
     },
     {
       name: 'Pineapple',
-      price:70,
+      price: 70,
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, quisquam.',
       id: 4,
@@ -132,25 +133,36 @@ export class HomeComponent {
   ];
   title = 'project';
 
-  counterClien(symbol: string, counter: HTMLElement, price_p: any,price_ptag:HTMLElement) {
+  counterClien(symbol: string, counter: HTMLElement, price_p: any, price_ptag: HTMLElement) {
     const counterValue = +counter.innerText;
     const priceP = +price_p;
 
     if (symbol === '+') {
       counter.innerText = counterValue + 1 + '';
-      price_ptag.innerText = priceP*(+counter.innerText) +'';
+      price_ptag.innerText = priceP * (+counter.innerText) + '';
     } else if (counterValue > 1) {
       counter.innerText = counterValue - 1 + '';
-      price_ptag.innerText = priceP*(+counter.innerText) +'';
+      price_ptag.innerText = priceP * (+counter.innerText) + '';
     }
   }
 
-  purchaseSuccess(){
-    Swal.fire({title:"Thank you...", text:"You Purchased succesfully!",  icon:"success" , })
+  purchaseSuccess() {
+    Swal.fire({ title: "Thank you...", text: "You Purchased succesfully!", icon: "success", })
     setTimeout(() => {
       console.log("Timer complete!");
     }, 5000);
   }
 
+  fruitsItems() {
+    if (!this.searchItem) {
+      return this.allProduct;
+    }
+
+    return this.allProduct
+      .filter(item =>
+        item.name
+          .toLowerCase()
+          .includes(this.searchItem.toLowerCase()))
+  }
 
 }
