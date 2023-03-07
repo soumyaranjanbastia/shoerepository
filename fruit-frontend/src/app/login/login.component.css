@@ -38,3 +38,6 @@ body {
   input[type="submit"]:hover {
     background-color: #45a049;
   }
+  .btn-rounded1{
+    margin-left: 10rem;
+  }
