@@ -1,20 +1,22 @@
 package com.fruitapp.backend.service;
 
-import com.fruitapp.backend.repository.CustomerRepository;
-import com.fruitapp.backend.service.ProductService;
-
 import org.springframework.stereotype.Service;
+
+import com.fruitapp.backend.repository.CustomerRepository;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * CustomerService
+ */
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
     private final CustomerRepository customerRepository;
-    private final Produ
+    private final ProductService productService;
 
-    public void addCart(String id) {
-        String id = "";
-
+    public void addCart(String productId) {
+        
     }
+    
 }
