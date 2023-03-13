@@ -2,6 +2,7 @@ package com.fruitapp.backend.service;
 
 import org.springframework.stereotype.Service;
 
+import com.fruitapp.backend.model.Customer;
 import com.fruitapp.backend.repository.CustomerRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -18,5 +19,10 @@ public class CustomerService {
     public void addCart(String productId) {
         
     }
+    public Customer addCustomer(Customer customer){
+
+       return this.customerRepository.save(customer);
+    }
+
     
 }
