@@ -4,7 +4,7 @@
     <div class="navbar-brand align-item-center d-flex">
       <i style="font-size: 30px;" class="fa-brands fa-nutritionix">
       </i>&nbsp;
-      <Strong>E-SHOPING</Strong>
+      <Strong>FRUIT-SHOPING</Strong>
       <div class=" from-group">
         <input type="text" class="form-control" placeholder="search product" [(ngModel)]="searchItem">
       </div>
@@ -60,10 +60,10 @@
       <div class="col-sm-3 jt-card mt-3 " *ngFor="let product of fruitsItems()">
         <div class="card">
           <div class="card-body">
-            <img [src]="product.imgUrl" alt="img">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <h5 class="card-price">Price = <span #price_ptag>{{ product.price }}</span></h5>
-            <p class="card-text">{{ product.description }}</p>
+            <img [src]="product.productImageURL" alt="img">
+            <h5 class="card-title">{{ product.productName }}</h5>
+            <h5 class="card-price">Price = <span #price_ptag>{{ product.productPrice }}</span></h5>
+            <p class="card-text">{{ product.productDescription }}</p>
             <div class="button-row">
               <div>
                 <a href="#" class="btn btn-success" (click)="purchaseSuccess()">Add to Cart</a>
