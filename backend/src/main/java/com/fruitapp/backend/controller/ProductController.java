@@ -36,4 +36,9 @@ public class ProductController {
     void addProduct(@RequestBody Product product) {
         productService.addProduct(product);
     }
+
+    @PostMapping("/multiple")
+    void addProducts(@RequestBody List<Product> products) {
+        productService.addProducts(products);
+    }
 }

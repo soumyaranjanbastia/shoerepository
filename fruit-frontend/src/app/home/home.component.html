@@ -31,13 +31,16 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../assets/immages/images11.png" height="300rem" class="d-block w-100" alt="#carouselExampleControls">
+          <img src="../assets/immages/images11.png" height="300rem" class="d-block w-100"
+            alt="#carouselExampleControls">
         </div>
         <div class="carousel-item">
-          <img src="../assets/immages/images13.png" height="300rem" class="d-block w-100" alt="#carouselExampleControls">
+          <img src="../assets/immages/images13.png" height="300rem" class="d-block w-100"
+            alt="#carouselExampleControls">
         </div>
         <div class="carousel-item">
-          <img src="../assets/immages/images12.png" height="300rem" class="d-block w-100" alt="#carouselExampleControls">
+          <img src="../assets/immages/images12.png" height="300rem" class="d-block w-100"
+            alt="#carouselExampleControls">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -71,10 +74,10 @@
               </div>
               <div>
                 <button (click)="counterClien('+',
-                  counter,product.price,price_ptag)">+</button>
-                <span #counter>1</span>
+                  product.productId)">+</button>
+                <span>{{ product.counter }}</span>
                 <button (click)="counterClien('-',
-                  counter,product.price,price_ptag)">-</button>
+                product.productId)">-</button>
               </div>
             </div>
           </div>

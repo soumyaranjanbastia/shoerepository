@@ -10,35 +10,38 @@ import { FruitService } from '../services/fruit.service';
 export class HomeComponent implements OnInit {
   counter = 1;
   searchItem = '';
-  allProduct:any;
+  allProduct: any;
   title = 'project';
 
-  constructor(private fruitService: FruitService) {}
+  constructor(private fruitService: FruitService) { }
 
   ngOnInit(): void {
     this.getAllProduct();
   }
   getAllProduct() {
     this.fruitService.getAllFruit().subscribe((data: any) => {
-      this.allProduct = Array.from(data);
+      this.allProduct = Array.from(data).map((product: any) => ({...product, counter : 1}));
     });
   }
   counterClien(
     symbol: string,
-    counter: HTMLElement,
-    price_p: any,
-    price_ptag: HTMLElement
+    productId: number
   ) {
-    const counterValue = +counter.innerText;
-    const priceP = +price_p;
+
+    const productIndex = Array.from(this.allProduct)
+      .findIndex((product: any) => product['productId'] === productId);
+
+    const counter = this.allProduct[productIndex].counter;
+    this.allProduct[productIndex].productPrice /= counter;
 
     if (symbol === '+') {
-      counter.innerText = counterValue + 1 + '';
-      price_ptag.innerText = priceP * +counter.innerText + '';
-    } else if (counterValue > 1) {
-      counter.innerText = counterValue - 1 + '';
-      price_ptag.innerText = priceP * +counter.innerText + '';
+      this.allProduct[productIndex].counter++;
+    } else if ((counter - 1) > 0) {
+      this.allProduct[productIndex].counter--;
     }
+    
+    this.allProduct[productIndex].productPrice *= this.allProduct[productIndex].counter;
+
   }
 
   purchaseSuccess() {
@@ -57,7 +60,7 @@ export class HomeComponent implements OnInit {
       return this.allProduct;
     }
 
-    return Array.from( this.allProduct).filter((item: any) =>
+    return Array.from(this.allProduct).filter((item: any) =>
       item.name.toLowerCase().includes(this.searchItem.toLowerCase())
     );
   }
