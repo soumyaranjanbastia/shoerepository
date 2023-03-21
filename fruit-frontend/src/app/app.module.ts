@@ -11,6 +11,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactUsComponent } from './contactus/contact-us.component'
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ContactUsComponent } from './contactus/contact-us.component'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterLink
   ],
   providers: [],
   bootstrap: [AppComponent]

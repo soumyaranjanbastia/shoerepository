@@ -1,17 +1,18 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="getFormData(loginForm.value)">
+    <h1>Login</h1>
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="userName" name="username"
+      required>
 
-    <form [formGroup]="loginForm" (ngSubmit)="getFormData(loginForm.value)">
-      <h1>Login</h1>
-      <label for="username">Username</label>
-      <input type="text" id="username" formControlName="userName" name="username" required>
-
-      <label for="password">Password</label>
-      <input type="password" id="password" formControlName="password" name="password" required>
-      <div class="Register">
-      <button class="btn btn-success btn-rounded" type="submit" value="Login" onclick="home()">Login</button>
-      <button class="btn  btn-primary btn-rounded1" routerLink="/address">Register Here</button>
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password"
+      name="password" required>
+    <div class="Register">
+      <button class="btn btn-success btn-rounded" type="submit" value="Login"
+        onclick="home()">Login</button>
+      <button class="btn btn-primary btn-rounded1" routerLink="/address">Register
+        Here</button>
     </div>
-    </form>
-
-  <!-- <router-outlet>
-    <a routerLink="address"><button class="btn btn-primary">Registration</button></a>
-  </router-outlet> -->
+  </form>
+</div>

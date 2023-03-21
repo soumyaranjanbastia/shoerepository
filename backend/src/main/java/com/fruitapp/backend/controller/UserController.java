@@ -20,11 +20,9 @@ public class UserController {
     private final CustomerService customerService;
 
     @PostMapping
-    public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer){
-        Customer cus=this.customerService.addCustomer(customer);
-        return new ResponseEntity<Customer>(cus,HttpStatus.OK);
+    public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
+        Customer cus = customerService.addCustomer(customer);
+        return new ResponseEntity<Customer>(cus, HttpStatus.OK);
     }
 
-    
-    
 }
