@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactUsComponent } from './contactus/contact-us.component'
 import { RouterLink } from '@angular/router';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RouterLink } from '@angular/router';
     SidenavComponent,
     LoginComponent,
     OrdersComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

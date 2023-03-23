@@ -17,12 +17,17 @@ public class CustomerService {
     private final ProductService productService;
 
     public void addCart(String productId) {
-        
-    }
-    public Customer addCustomer(Customer customer){
 
-       return this.customerRepository.save(customer);
     }
 
-    
+    public Customer addCustomer(Customer customer) {
+
+        return this.customerRepository.save(customer);
+    }
+
+    public String login(String customerEmail, String customerPassword) {
+        var customer = customerRepository.findByCustomerEmailAndCustomerPassword(customerEmail, customerPassword);
+        return customer.isPresent() ? customer.get().getCustomerId() : "";
+    }
+
 }

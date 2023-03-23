@@ -1,44 +1,44 @@
 <section class="payment-from">
     <div class="container">
       <h2>Delivery-Address</h2>
-      <form >
+      <form #register="ngForm" (ngSubmit)="onRegister(register)">
         <div class="form-group">
           <label for="name-on-card">Name</label>
-          <input type="text" id="name-on-card" name="name-on-card"
-            placeholder="Your Name">
+          <input type="text" id="name-on-card" name="customerName"
+            placeholder="Your Name" ngModel>
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="payment-from" name="password"
-            placeholder="Your Password">
+          <input type="password" id="payment-from" name="customerPassword"
+            placeholder="Your Password" ngModel>
         </div>
         
         <div class="form-group">
           <label for="Delivery-Address">Address</label>
-          <input type="text" id="Address" name="Delivery-Address" placeholder="Delivery-Address">
+          <input type="text" id="Address" name="customerAddress" placeholder="Delivery-Address" ngModel>
         </div>
         <div class="form-group">
           <label for="pin-code">Pin-Code</label>
-          <input type="tel" id="pin-code" name="pin-code" placeholder="123">
+          <input type="tel" id="pin-code" name="customerPin" placeholder="123" ngModel>
         </div>
         
         <div class="form-group">
           <label for="Phone-number">Phone Number</label>
-          <input type="tel" id="tel" name="tel" placeholder="91057-64345">
+          <input type="tel" id="tel" name="customerPhoneNumber" placeholder="91057-64345" ngModel>
         </div>
   
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email"
-            placeholder="email@gmail.com">
+          <input type="email" id="email" name="customerEmail"
+            placeholder="email@gmail.com" ngModel>
         </div>
   
         
   
         <div class="form-group">
           <label for="country">Country</label>
-          <select id="country" name="country">
+          <select id="country" name="customerCountry" ngModel>
             <option value="">Select Country</option>
             <option value="India">India</option>
             <option value="usa">USA</option>
@@ -47,7 +47,7 @@
           </select>
         </div>
         <div class="submit">
-          <a href="#" class="btn btn-success" >Submit</a>
+          <button type="submit" class="btn btn-success">Submit</button>
       </div>
       </form>
     </div>
