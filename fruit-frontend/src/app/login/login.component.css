@@ -1,49 +1,52 @@
 body {
-  background-color: #f1f1f1;
-  font-family: Arial, sans-serif;
-}
-.container {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-}
-
-form {
-  background-color: #fff;
-  border: 2px solid #ddd;
-  padding: 20px;
-  width: 400px;
-  margin: 0 auto;
-  box-shadow: 0 0 10px #ddd;
-}
-h1 {
-  text-align: center;
-}
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-}
-input[type="submit"] {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
-.btn-rounded1 {
-  margin-left: 10rem;
-}
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  
+  form {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px #ddd;
+  }
+  h1 {
+    text-align: center;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .Register{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  

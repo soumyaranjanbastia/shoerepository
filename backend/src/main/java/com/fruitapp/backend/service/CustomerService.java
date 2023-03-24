@@ -25,9 +25,11 @@ public class CustomerService {
         return this.customerRepository.save(customer);
     }
 
-    public String login(String customerEmail, String customerPassword) {
-        var customer = customerRepository.findByCustomerEmailAndCustomerPassword(customerEmail, customerPassword);
-        return customer.isPresent() ? customer.get().getCustomerId() : "";
+    public Customer login(String customerEmail, String customerPassword) {
+        return customerRepository
+                .findByCustomerEmailAndCustomerPassword(customerEmail, customerPassword)
+                .orElse(null);
+
     }
 
 }

@@ -1,32 +1,28 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
-  loginForm = new FormGroup({
-    userName: new FormControl(''),
-    password: new FormControl(''),
-  });
-  userName: any = 'Bastia';
-  password: any = 'jt123';
-  getFormData(formData: any) {
-    console.log(formData);
-    if (
-      formData.userName == this.userName &&
-      formData.password == this.password
-    ) {
-      console.log('Login Successfull');
-      this.router.navigate(['/home']);
-    } else {
-      console.log('Login Failed!!');
-    }
-  }
+
+  constructor(private router: Router, private userService: UserService) {}
+
   home() {
     this.router.navigate(['/home']);
+  }
+
+  onLogin(loginForm: any) {
+    console.log(loginForm.value);
+    this.userService.login(loginForm.value).subscribe((data)=>{
+      if(data) {
+        alert("valid user")
+      }else{
+        alert("invalid user")
+      }
+    })
   }
 }

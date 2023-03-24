@@ -28,12 +28,12 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody Customer customer) {
+    public Customer login(@RequestBody Customer customer) {
         var customerEmail = customer.getCustomerEmail();
         var customerPassword = customer.getCustomerPassword();
 
         return customerService.login(customerEmail, customerPassword);
-        
+
     }
 
 }
