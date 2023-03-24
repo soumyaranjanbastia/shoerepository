@@ -17,9 +17,10 @@ export class LoginComponent {
 
   onLogin(loginForm: any) {
     console.log(loginForm.value);
-    this.userService.login(loginForm.value).subscribe((data)=>{
+    this.userService.login(loginForm.value).subscribe((data: any)=>{
       if(data) {
-        alert("valid user")
+        localStorage.setItem("id", data['customerId']);
+       this.home();
       }else{
         alert("invalid user")
       }
