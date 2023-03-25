@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-success">
-    <div class="container-fluid">
-        <h1> My Orders</h1>
-    </div>
+  <div class="container-fluid">
+    <h1> My Orders</h1>
+  </div>
 </nav>
 <!-- <table class="table">
     <thead>
@@ -26,25 +26,27 @@
     </tbody>
 </table> -->
 <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Fruit Name </th>
-        <th scope="col">kg</th>
-        <th scope="col">Price</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Apple</td>
-        <td>2</td>
-        <td>200</td>
-        <td>
-             <button class="btn btn-success">Bye Now</button>
-            <button class="btn btn-danger  mx-3 ">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Fruit Name </th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="orders.length == 0">
+      <td colspan="5">No item added</td>
+    </tr>
+    <tr *ngFor="let order of orders; let idx = index">
+      <th scope="row">{{idx + 1}}</th>
+      <td>{{order['product']['productName']}}</td>
+      <td>{{order['counter']}}</td>
+      <td>{{order['product']['productPrice']}}</td>
+      <td>
+        <button class="btn btn-success">Delivered</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

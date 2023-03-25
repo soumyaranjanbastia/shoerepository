@@ -31,7 +31,12 @@ export class CartComponent implements OnInit {
 
     })
   }
-
+  onOrder() {
+    this.userService.order().subscribe(response => {
+      this.getAllCart();
+      this.purchaseSuccess("order placed")
+    })
+  }
   purchaseSuccess(text: string) {
     Swal.fire({
       title: 'Thank you...',

@@ -25,11 +25,13 @@ public class OrderAndCartService {
     }
 
     public void order(String id) {
-        var item = orderAndCartRepository.findById(id).orElse(null);
-        if (item != null) {
-            item.setStatus(2);
-            orderAndCartRepository.save(item);
+        List<OrderAndCart> cartItems = orderAndCartRepository
+                .findBycustomerIdAndStatus(id, 1);
+        for (OrderAndCart orderAndCart : cartItems) {
+            orderAndCart.setStatus(2);
         }
+
+        orderAndCartRepository.saveAll(cartItems);
     }
 
     public List<OrderAndCartDto> allOrder(String customerId) {

@@ -3,7 +3,7 @@
         <h1>My Cart</h1>
     </div>
 </nav>
-
+<button class="btn btn-success m-3" (click)="onOrder()">Order Now</button>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -15,6 +15,9 @@
         </tr>
     </thead>
     <tbody>
+        <tr *ngIf="carts.length == 0">
+            <td colspan="5">No item added</td>
+        </tr>
         <tr *ngFor="let cart of carts; let idx = index">
             <th scope="row">{{ idx + 1}}</th>
             <td>{{cart['product']['productName']}}</td>
@@ -26,3 +29,5 @@
         </tr>
     </tbody>
 </table>
+
+<h2>Total: {{total}}</h2>
