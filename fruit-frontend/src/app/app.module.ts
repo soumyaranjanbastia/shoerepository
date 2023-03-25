@@ -12,6 +12,7 @@ import { ContactUsComponent } from './contactus/contact-us.component'
 import { RouterLink } from '@angular/router';
 import { AddressComponent } from './address/address.component';
 import { LoginComponent } from './login/login.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginComponent } from './login/login.component';
     OrdersComponent,
     ContactUsComponent,
     AddressComponent,
-    LoginComponent
+    LoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

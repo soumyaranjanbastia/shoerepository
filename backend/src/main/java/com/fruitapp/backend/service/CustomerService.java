@@ -14,14 +14,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CustomerService {
     private final CustomerRepository customerRepository;
-    private final ProductService productService;
-
-    public void addCart(String productId) {
-
-    }
 
     public Customer addCustomer(Customer customer) {
-
         return this.customerRepository.save(customer);
     }
 

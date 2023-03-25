@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { FruitService } from '../services/fruit.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -13,14 +14,14 @@ export class HomeComponent implements OnInit {
   allProduct: any;
   title = 'project';
 
-  constructor(private fruitService: FruitService) { }
+  constructor(private fruitService: FruitService, private userService: UserService) { }
 
   ngOnInit(): void {
     this.getAllProduct();
   }
   getAllProduct() {
     this.fruitService.getAllFruit().subscribe((data: any) => {
-      this.allProduct = Array.from(data).map((product: any) => ({...product, counter : 1}));
+      this.allProduct = Array.from(data).map((product: any) => ({ ...product, counter: 1 }));
     });
   }
   counterClien(
@@ -39,15 +40,22 @@ export class HomeComponent implements OnInit {
     } else if ((counter - 1) > 0) {
       this.allProduct[productIndex].counter--;
     }
-    
+
     this.allProduct[productIndex].productPrice *= this.allProduct[productIndex].counter;
 
   }
 
-  purchaseSuccess() {
+  addCart(productId: string, counter: number) {
+    const product = { productId, counter };
+    this.userService.addCart(product).subscribe((response) => {
+      this.purchaseSuccess("Item Added");
+    });
+  }
+
+  purchaseSuccess(text: string) {
     Swal.fire({
       title: 'Thank you...',
-      text: 'You Purchased succesfully!',
+      text,
       icon: 'success',
     });
     setTimeout(() => {

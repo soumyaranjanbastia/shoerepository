@@ -33,12 +33,12 @@ public class ProductController {
     }
 
     @PostMapping
-    void addProduct(@RequestBody Product product) {
+    public void addProduct(@RequestBody Product product) {
         productService.addProduct(product);
     }
 
     @PostMapping("/multiple")
-    void addProducts(@RequestBody List<Product> products) {
+    public void addProducts(@RequestBody List<Product> products) {
         productService.addProducts(products);
     }
 }

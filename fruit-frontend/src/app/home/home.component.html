@@ -11,7 +11,7 @@
       <span class="fas fa-search search-icon" (click)="fruitsItems"></span>
     </div>
 
-    <div class="shoping"  href="#" [routerLink]="'/orders'" >
+    <div class="shoping"  href="#" [routerLink]="'/cart'" >
       <a class="btn btn-success">
         <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
         <div style="font-size: 10px;" class="badge bg-danger">+</div>
@@ -76,7 +76,7 @@
             <p class="card-text">{{ product.productDescription }}</p>
             <div class="button-row">
               <div>
-                <button class="btn btn-success" (click)="purchaseSuccess()">Add
+                <button class="btn btn-success" (click)="addCart(product.productId, product.counter)">Add
                   to Cart</button>
 
               </div>
