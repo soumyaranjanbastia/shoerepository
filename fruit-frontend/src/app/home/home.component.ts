@@ -14,41 +14,44 @@ export class HomeComponent implements OnInit {
   allProduct: any;
   title = 'project';
 
-  constructor(private fruitService: FruitService, private userService: UserService) { }
+  constructor(
+    private fruitService: FruitService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.getAllProduct();
   }
   getAllProduct() {
     this.fruitService.getAllFruit().subscribe((data: any) => {
-      this.allProduct = Array.from(data).map((product: any) => ({ ...product, counter: 1 }));
+      this.allProduct = Array.from(data).map((product: any) => ({
+        ...product,
+        counter: 1,
+      }));
     });
   }
-  counterClien(
-    symbol: string,
-    productId: number
-  ) {
-
-    const productIndex = Array.from(this.allProduct)
-      .findIndex((product: any) => product['productId'] === productId);
+  counterClien(symbol: string, productId: number) {
+    const productIndex = Array.from(this.allProduct).findIndex(
+      (product: any) => product['productId'] === productId
+    );
 
     const counter = this.allProduct[productIndex].counter;
     this.allProduct[productIndex].productPrice /= counter;
 
     if (symbol === '+') {
       this.allProduct[productIndex].counter++;
-    } else if ((counter - 1) > 0) {
+    } else if (counter - 1 > 0) {
       this.allProduct[productIndex].counter--;
     }
 
-    this.allProduct[productIndex].productPrice *= this.allProduct[productIndex].counter;
-
+    this.allProduct[productIndex].productPrice *=
+      this.allProduct[productIndex].counter;
   }
 
   addCart(productId: string, counter: number) {
     const product = { productId, counter };
     this.userService.addCart(product).subscribe((response) => {
-      this.purchaseSuccess("Item Added");
+      this.purchaseSuccess('Item Added');
     });
   }
 
@@ -68,8 +71,9 @@ export class HomeComponent implements OnInit {
       return this.allProduct;
     }
 
-    return Array.from(this.allProduct).filter((item: any) =>
-      item.name.toLowerCase().includes(this.searchItem.toLowerCase())
-    );
+    return Array.from(this.allProduct).filter((item: any) => {
+      
+      return item['productName'].toLowerCase().includes(this.searchItem.toLowerCase());
+    });
   }
 }
