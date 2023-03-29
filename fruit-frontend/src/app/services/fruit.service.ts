@@ -26,4 +26,8 @@ export class FruitService {
   saveFruit(product: Product) {
     return this.http.post(this.baseUrl, product);
   }
+
+  removeFruit(id: string) {
+    return this.http.delete(this.baseUrl + `/${id}`);
+  }
 }

@@ -12,8 +12,20 @@ export class AdminComponent implements OnInit {
 
   constructor(private fruitService: FruitService) { }
   ngOnInit(): void {
+    this.getFruits();
+  }
+
+  onRemove(id: any) {
+    if (confirm('Do you want to remove')) {
+      this.fruitService.removeFruit(id).subscribe(response => {
+        this.getFruits();
+      });
+    }
+  }
+
+  getFruits() {
     this.fruitService.getFruits().subscribe(products => {
       this.products = products;
-    })
+    });
   }
 }

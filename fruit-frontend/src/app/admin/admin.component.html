@@ -25,7 +25,7 @@
                     <td>
                         <a class="btn btn-success m-3" [routerLink]="'/admin/add'"
                             [queryParams]="{id: product.productId}">Update</a>
-                        <button type="button" class="btn btn-danger">Remove</button>
+                        <button type="button" class="btn btn-danger" (click)="onRemove(product.productId)">Remove</button>
                     </td>
                 </tr>
             </tbody>
