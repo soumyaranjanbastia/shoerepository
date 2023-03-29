@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ContactUsComponent } from './contactus/contact-us.component';
 import { CartComponent } from './cart/cart.component';
+import { AdminComponent } from './admin/admin.component';
+import { AddComponent } from './admin/add/add.component';
 
 const routes: Routes = [
   { path: 'sidenav', component: SidenavComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'orders', component: OrdersComponent },
   { path: 'cart', component: CartComponent },
   { path: 'contactus', component: ContactUsComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'admin/add', component: AddComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 
@@ -23,4 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

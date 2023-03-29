@@ -14,6 +14,7 @@ import { AddressComponent } from './address/address.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { AdminComponent } from './admin/admin.component';
+import { AddComponent } from './admin/add/add.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AdminComponent } from './admin/admin.component';
     AddressComponent,
     LoginComponent,
     CartComponent,
-    AdminComponent
+    AdminComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
