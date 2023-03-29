@@ -13,6 +13,7 @@ import { RouterLink } from '@angular/router';
 import { AddressComponent } from './address/address.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CartComponent } from './cart/cart.component';
     ContactUsComponent,
     AddressComponent,
     LoginComponent,
-    CartComponent
+    CartComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
