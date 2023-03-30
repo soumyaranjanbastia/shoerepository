@@ -1,12 +1,13 @@
 <header>
   <div class="navbar navbar-dark bg-success shadow-sm">
     <div class="navbar-brand align-item-center d-flex">
-      <div class="toggle-button" >
-        <a class="btn btn-success " routerLink="/sidenav">
-          <h3><i class="fa-solid fa-bars"></i></h3>
-        </a>
+      <div class="m-1 toggle-button">
+        <button class="btn" (click)="showSide = !showSide"><i class="fa-solid fa-bars text-light"></i></button>
+        <div *ngIf="showSide">
+          <app-sidenav></app-sidenav>
+        </div>
       </div>
-      
+
       <div class=" from-group">
         <input type="text" class="form-control" placeholder="search product"
           [(ngModel)]="searchItem">
@@ -15,16 +16,16 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <H2><i>FRUIT SHOPING</i></H2>
     </div>
-    
 
-    <div class="shoping"  href="#" [routerLink]="'/cart'" >
+
+    <div class="shoping" href="#" [routerLink]="'/cart'">
       <a class="btn btn-success">
         <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
         <div style="font-size: 10px;" class="badge bg-danger">+</div>
       </a>
     </div>
 
-    <div class="toggle-button" >
+    <div class="toggle-button">
       <a class="btn btn-success " routerLink="/orders">
         <h3><i class="fa-solid fa-bag-shopping"></i></h3>
       </a>
@@ -82,7 +83,8 @@
             <p class="card-text">{{ product.productDescription }}</p>
             <div class="button-row">
               <div>
-                <button class="btn btn-success" (click)="addCart(product.productId, product.counter)">Add
+                <button class="btn btn-success"
+                  (click)="addCart(product.productId, product.counter)">Add
                   to Cart</button>
 
               </div>

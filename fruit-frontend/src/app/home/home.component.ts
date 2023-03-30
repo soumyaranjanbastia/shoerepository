@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   searchItem = '';
   allProduct: any;
   title = 'project';
-
+  showSide = false;
   constructor(
     private fruitService: FruitService,
     private userService: UserService
@@ -72,8 +72,9 @@ export class HomeComponent implements OnInit {
     }
 
     return Array.from(this.allProduct).filter((item: any) => {
-      
-      return item['productName'].toLowerCase().includes(this.searchItem.toLowerCase());
+      return item['productName']
+        .toLowerCase()
+        .includes(this.searchItem.toLowerCase());
     });
   }
 }
