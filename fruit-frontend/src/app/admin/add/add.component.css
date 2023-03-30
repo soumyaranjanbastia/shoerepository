@@ -1,0 +1,13 @@
+header {
+    background-color: seagreen;
+    color: #fff;
+    padding: 15px;
+}
+
+.form-container {
+    width: 40%;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 10px 20px 30px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}

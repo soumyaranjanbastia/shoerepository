@@ -1,0 +1,31 @@
+<header>
+    <h1>Admin Page</h1>
+</header>
+
+<section>
+    <div>
+        <a class="link" [routerLink]="'/admin'">Return to home</a>
+    </div>
+    <div class="form-container">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+            <div class="form-group">
+                <label for="name-on-card">Name</label>
+                <input type="text" class="form-control" name="productName" [(ngModel)]="product.productName">
+            </div>
+            <div class="form-group">
+                <label for="name-on-card">Description</label>
+                <input type="text" class="form-control" name="productDescription" [(ngModel)]="product.productDescription">
+            </div>
+            <div class="form-group">
+                <label for="name-on-card">Image URL</label>
+                <input type="text" class="form-control" name="productImageURL" [(ngModel)]="product.productImageURL">
+            </div>
+            <div class="form-group">
+                <label for="name-on-card">Price</label>
+                <input type="text" class="form-control" name="productPrice" [(ngModel)]="product.productPrice">
+            </div>
+            <input type="hidden" name="productId" [(ngModel)]="product.productId">
+            <input type="submit" class="mt-2 btn btn-success">
+        </form>
+    </div>
+</section>
