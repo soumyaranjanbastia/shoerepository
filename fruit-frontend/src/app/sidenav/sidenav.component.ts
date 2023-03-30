@@ -8,3 +8,5 @@ import { Component } from '@angular/core';
 export class SidenavComponent {
   isClicked:any = true
 }
+
+

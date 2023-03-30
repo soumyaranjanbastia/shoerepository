@@ -1,15 +1,21 @@
 <header>
   <div class="navbar navbar-dark bg-success shadow-sm">
     <div class="navbar-brand align-item-center d-flex">
-      <i style="font-size: 30px;" class="fa-brands fa-nutritionix">
-      </i>&nbsp;
-      <Strong>FRUIT-SHOPING</Strong>
+      <div class="toggle-button" >
+        <a class="btn btn-success " routerLink="/sidenav">
+          <h3><i class="fa-solid fa-bars"></i></h3>
+        </a>
+      </div>
+      
       <div class=" from-group">
         <input type="text" class="form-control" placeholder="search product"
           [(ngModel)]="searchItem">
       </div>
       <span class="fas fa-search search-icon" (click)="fruitsItems"></span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <H2><i>FRUIT SHOPING</i></H2>
     </div>
+    
 
     <div class="shoping"  href="#" [routerLink]="'/cart'" >
       <a class="btn btn-success">
