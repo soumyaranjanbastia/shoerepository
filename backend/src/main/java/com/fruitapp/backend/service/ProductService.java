@@ -23,6 +23,8 @@ public class ProductService {
     }
 
     public void addProduct(Product product) {
+        if(product.getProductId().isEmpty())
+            product.setProductId(null);
         productRepository.save(product);
     }
 
