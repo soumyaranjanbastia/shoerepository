@@ -1,4 +1,13 @@
-.payment-from {
+.payment-from{
+  min-height: 100vh;
+  background-image: url(https://e1.pxfuel.com/desktop-wallpaper/354/754/desktop-wallpaper-assortment-of-tropical-citrus-fruits-backgrounds-cute-spring-fruits.jpg);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.container {
     margin: 20px auto;
     max-width: 500px;
     background-color: #fff;
