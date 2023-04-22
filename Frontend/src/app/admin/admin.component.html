@@ -2,7 +2,7 @@
     <h1>Admin Page</h1>
 </header>
 <section class="mt-3 container-fluid">
-    <a class="mb-2 btn btn-primary" [routerLink]="'/admin/add'">Add Fruit</a>
+    <a class="mb-2 btn btn-primary" [routerLink]="'/admin/add'">Add Shose</a>
     <div>
         <table class="table table-bordered">
             <thead>
@@ -23,7 +23,7 @@
                     <td>{{ product.productDescription }}</td>
                     <td>{{ '&#8377; ' + product.productPrice }}</td>
                     <td>
-                        <a class="btn btn-success m-3" [routerLink]="'/admin/add'"
+                        <a class="btn btn-secondary m-3" [routerLink]="'/admin/add'"
                             [queryParams]="{id: product.productId}">Update</a>
                         <button type="button" class="btn btn-danger" (click)="onRemove(product.productId)">Remove</button>
                     </td>
